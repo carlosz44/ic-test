@@ -1,32 +1,11 @@
-# Hidden files
-# -----------------------------------
-._*
-*~
-.~lock.*
-
-# Temp files
-# -----------------------------------
 .DS_Store
-.DS_Store?
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# IDE files
-# -----------------------------------
-.buildpath
 .idea
-.project
-.settings
-nbproject
-
-# Vendor files
-# -----------------------------------
 node_modules
-vendor
-
-# CONFIG files
-# -----------------------------------
-*.httpd.conf
-.env
+package-lock.json
+typings
+app/**/*.js
+app/**/*.js.map
+test/**/*.js
+test/**/*.js.map
+coverage
+.nyc_output
