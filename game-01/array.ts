@@ -1,7 +1,4 @@
 export class NumbersArray {
-  numbersArray: number[];
-  pairSum: number;
-
   getFirstPair(numbersArray: number[], pairSum: number): [number, number] {
     const hash = [];
     const matchingPair = [];
