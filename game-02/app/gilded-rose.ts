@@ -17,6 +17,32 @@ export class GildedRose {
     this.items = items;
   }
 
+  updateQuality(): Item[] {
+    this.items.forEach((item) => {
+      switch (item.name) {
+        case "Aged Brie": {
+          // item = updateItemAgedBrie();
+          break;
+        }
+        case "Backstage passes to a TAFKAL80ETC concert": {
+          // item = updateItemBackstagePasses();
+          break;
+        }
+        case "Sulfuras, Hand of Ragnaros": {
+          // item = updateItemSulfuras();
+          break;
+        }
+        case "Conjured": {
+          // item = updateItemConjured();
+          break;
+        }
+        default:
+        // item = updateItem();
+      }
+    });
+    return this.items;
+  }
+  /*
   updateQuality() {
     for (let i = 0; i < this.items.length; i++) {
       if (
@@ -74,4 +100,5 @@ export class GildedRose {
 
     return this.items;
   }
+  */
 }
