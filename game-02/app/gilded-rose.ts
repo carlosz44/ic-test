@@ -12,7 +12,7 @@ export class GildedRose {
   constructor(items = [] as Array<Item>) {
     //TODO: Initialize and test
     this.items = items;
-    // this.items = items.map((item) => {
+    // items.map((item) => {
     //   switch (item.name) {
     //     case "Aged Brie": {
     //       return new ItemAgedBrie(item.sellIn, item.quality);
@@ -33,24 +33,25 @@ export class GildedRose {
   }
 
   updateQuality(): Array<Item> {
-    this.items.forEach((item) => {
-      switch (item.name) {
-        case "Aged Brie": {
-          return new ItemAgedBrie(item.sellIn, item.quality).update();
-        }
-        case "Backstage passes to a TAFKAL80ETC concert": {
-          return new ItemBackstagePasses(item.sellIn, item.quality).update();
-        }
-        case "Sulfuras, Hand of Ragnaros": {
-          return new ItemLegendary().update();
-        }
-        case "Conjured": {
-          return new ItemConjured(item.sellIn, item.quality).update();
-        }
-        default:
-          return new Item(item.name, item.sellIn, item.quality).update();
-      }
-    });
+    this.items.forEach((item) => item.update());
+    // this.items.forEach((item) => {
+    //   switch (item.name) {
+    //     case "Aged Brie": {
+    //       return new ItemAgedBrie(item.sellIn, item.quality);
+    //     }
+    //     case "Backstage passes to a TAFKAL80ETC concert": {
+    //       return new ItemBackstagePasses(item.sellIn, item.quality);
+    //     }
+    //     case "Sulfuras, Hand of Ragnaros": {
+    //       return new ItemLegendary().update();
+    //     }
+    //     case "Conjured": {
+    //       return new ItemConjured(item.sellIn, item.quality);
+    //     }
+    //     default:
+    //       return new Item(item.name, item.sellIn, item.quality);
+    //   }
+    // });
     return this.items;
   }
 }
