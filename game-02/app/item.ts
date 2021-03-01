@@ -3,15 +3,12 @@ const minQuality: number = 0;
 const legendaryQuality: number = 80;
 
 export class Item {
-  name: string;
-  sellIn: number;
-  quality: number;
+  constructor(
+    public name: string,
+    public sellIn: number,
+    public quality: number
+  ) {}
 
-  constructor(name: string, sellIn: number, quality: number) {
-    this.name = name;
-    this.sellIn = sellIn;
-    this.quality = quality;
-  }
   update(): void {
     this.quality =
       this.sellIn < 1
@@ -21,9 +18,6 @@ export class Item {
   }
 }
 export class ItemAgedBrie extends Item {
-  constructor(sellIn: number, quality: number) {
-    super("Aged Brie", sellIn, quality);
-  }
   update(): void {
     this.quality =
       this.sellIn < 0
@@ -33,9 +27,6 @@ export class ItemAgedBrie extends Item {
   }
 }
 export class ItemBackstagePasses extends Item {
-  constructor(sellIn: number, quality: number) {
-    super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
-  }
   update(): void {
     if (this.sellIn < 0) {
       this.quality = 0;
@@ -50,9 +41,6 @@ export class ItemBackstagePasses extends Item {
   }
 }
 export class ItemLegendary extends Item {
-  constructor() {
-    super("Sulfuras, Hand of Ragnaros", 0, legendaryQuality);
-  }
   update(): void {
     this.quality != legendaryQuality
       ? (this.quality = legendaryQuality)
@@ -60,9 +48,6 @@ export class ItemLegendary extends Item {
   }
 }
 export class ItemConjured extends Item {
-  constructor(sellIn: number, quality: number) {
-    super("Conjured", sellIn, quality);
-  }
   update(): void {
     this.quality =
       this.sellIn < 1
