@@ -9,10 +9,10 @@ import {
 export class GildedRose {
   items: Array<Item>;
 
-  constructor(items = [] as Array<Item>) {
+  constructor(items: Array<Item>) {
     //TODO: Initialize and test
     this.items = items;
-    // items.map((item) => {
+    // this.items = items.forEach((item) => {
     //   switch (item.name) {
     //     case "Aged Brie": {
     //       return new ItemAgedBrie(item.sellIn, item.quality);
@@ -32,8 +32,10 @@ export class GildedRose {
     // });
   }
 
-  updateQuality(): Array<Item> {
+  updateQuality() {
     this.items.forEach((item) => item.update());
+    return this.items;
+    // this.items.forEach((item) => item.update());
     // this.items.forEach((item) => {
     //   switch (item.name) {
     //     case "Aged Brie": {
@@ -52,6 +54,5 @@ export class GildedRose {
     //       return new Item(item.name, item.sellIn, item.quality);
     //   }
     // });
-    return this.items;
   }
 }
