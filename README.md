@@ -8,4 +8,4 @@ Solved using Typescript and a hashing approach.
 
 ## Game-02
 
-Solved using functional approach.
+Solved using object-oriented approach.
